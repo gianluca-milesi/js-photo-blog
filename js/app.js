@@ -1,21 +1,21 @@
-console.log(axios);
-
 rowEl = document.querySelector(".row");
 
 axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
     .then((res) => {
         const posts = res.data;
-        appendImgUrl(posts, rowEl);
+        appendPosts(posts, rowEl);
     })
     .catch((err) => {
         console.err(err);
     });
 
-function appendImgUrl(posts, root) {
+function appendPosts(posts, root) {
     console.log(posts);
 
     posts.forEach((post) => {
-        const { url, title } = post
+        let { url, title } = post
+        title = title.charAt(0).toUpperCase() + title.slice(1);
+        
         const postCard = `
         <div class="col-md-6 col-lg-4 mb-4">
             <div class="card p-3 rounded-0 h-100">
@@ -30,40 +30,3 @@ function appendImgUrl(posts, root) {
         root.innerHTML += postCard
     });
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* <div class="col-md-6 col-lg-4 mb-4">
-<div class="card p-3 rounded-0">
-    <img src="./img/pin.svg" class="pin">
-    <img src="./img/random.jpg" class="card-img-top">
-    <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk
-            of the card's content.</p>
-    </div>
-</div>
-</div> */
