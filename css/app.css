@@ -12,3 +12,16 @@ a {
 img {
     max-width: 100%;
 }
+
+
+
+/* HEADER */
+header {
+    background-image: url(../img/wall.png);
+    background-size: 50%;
+}
+
+header h1 {
+    font-size: 80px;
+    font-style: oblique;
+}
