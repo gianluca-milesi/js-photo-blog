@@ -1,4 +1,9 @@
 /* GENERAL */
+*{
+    font-family: Roboto Condensed;
+    font-style: oblique;
+}
+
 ul,
 ol {
     list-style: none;
@@ -9,10 +14,13 @@ a {
     text-decoration: none;
 }
 
+p {
+    font-size: 20px;
+}
+
 img {
     max-width: 100%;
 }
-
 
 
 /* HEADER */
@@ -22,6 +30,15 @@ header {
 }
 
 header h1 {
-    font-size: 80px;
-    font-style: oblique;
+    font-size: 120px;
+}
+
+
+/* MAIN */
+main {
+    background-image: url(../img/cork.png);
+}
+
+.card {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
 }
