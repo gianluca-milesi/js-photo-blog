@@ -20,9 +20,6 @@ function appendPosts(post) {
         title = title.charAt(0).toUpperCase() + title.slice(1);
 
         generateCards(url, title);
-
-        // removeDisplayNone();
-
     });
 };
 
@@ -41,10 +38,14 @@ function generateCards(surce, description) {
 
     rowEl.innerHTML += postCard;
 
-    
+
     const cardsEl = document.querySelectorAll(".card");
     cardsEl.forEach((card) => {
         card.addEventListener("click", function () {
+
+            const cardImgSrc = card.querySelector(".card-img-top").src;
+            previewEl.querySelector("img").src = cardImgSrc;
+
             previewEl.classList.remove("d-none");
         });
     });
