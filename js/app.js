@@ -20,11 +20,14 @@ function appendPosts(post) {
         title = title.charAt(0).toUpperCase() + title.slice(1);
 
         generateCards(url, title);
+
+        // removeDisplayNone();
+
     });
 };
 
 
-function generateCards (surce, description) {
+function generateCards(surce, description) {
     const postCard = `
     <div class="col-md-6 col-lg-4 mb-4">
         <div class="card p-3 rounded-0 h-100">
@@ -37,9 +40,18 @@ function generateCards (surce, description) {
     </div>`
 
     rowEl.innerHTML += postCard;
-}
+
+    
+    const cardsEl = document.querySelectorAll(".card");
+    cardsEl.forEach((card) => {
+        card.addEventListener("click", function () {
+            previewEl.classList.remove("d-none");
+        });
+    });
+
+};
 
 
 BtnClose.addEventListener("click", function () {
     previewEl.classList.add("d-none");
-})
+});
