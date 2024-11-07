@@ -42,6 +42,11 @@ main {
 .card {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
     position: relative;
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: rotate(5deg);
 }
 
 .pin {
