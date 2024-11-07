@@ -51,7 +51,7 @@ main {
     transform: translateX(-50%);
 }
 
-.preview {
+div.preview {
     z-index: 10;
     position: fixed;
     right:0;
@@ -59,4 +59,13 @@ main {
     top: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.9);
+}
+
+
+
+
+
+/* UTILITIES */
+.d-none {
+    display: none;
 }

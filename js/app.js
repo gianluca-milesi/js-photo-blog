@@ -1,4 +1,6 @@
-rowEl = document.querySelector(".row");
+const rowEl = document.querySelector(".row");
+const previewEl = document.querySelector(".preview");
+const BtnClose = document.getElementById("btn-close");
 
 axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
     .then((res) => {
@@ -36,3 +38,8 @@ function generateCards (surce, description) {
 
     rowEl.innerHTML += postCard;
 }
+
+
+BtnClose.addEventListener("click", function () {
+    previewEl.classList.add("d-none");
+})
