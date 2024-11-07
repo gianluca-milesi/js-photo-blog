@@ -45,7 +45,8 @@ main {
 }
 
 .card:hover {
-    transform: rotate(5deg);
+    transform: rotate(10deg);
+    cursor: pointer;
 }
 
 .pin {
