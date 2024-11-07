@@ -6,6 +6,7 @@ axios.get("https://jsonplaceholder.typicode.com/photos?_limit=6")
     .then((res) => {
         const posts = res.data;
         appendPosts(posts);
+        removeDisplayNonePreview();
     })
     .catch((err) => {
         console.error(err);
@@ -37,8 +38,10 @@ function generateCards(surce, description) {
     </div>`
 
     rowEl.innerHTML += postCard;
+};
 
 
+function removeDisplayNonePreview(){
     const cardsEl = document.querySelectorAll(".card");
     cardsEl.forEach((card) => {
         card.addEventListener("click", function () {
@@ -49,8 +52,7 @@ function generateCards(surce, description) {
             previewEl.classList.remove("d-none");
         });
     });
-
-};
+}
 
 
 BtnClose.addEventListener("click", function () {
