@@ -26,7 +26,6 @@ img {
 /* HEADER */
 header {
     background-image: url(../img/wall.png);
-    background-size: 50%;
 }
 
 header h1 {
@@ -56,15 +55,53 @@ main {
     transform: translateX(-50%);
 }
 
-div.preview {
+.preview {
     z-index: 10;
     position: fixed;
+    width: 100vw;
+    height: 100vh;
     right: 0;
     left: 0;
     top: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.preview-figure {
+    min-width: 300px;
+    padding: 40px;
+}
+
+#btn-close{
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+}
+
+#btn-close::before,
+#btn-close::after{
+    content: "";
+    position: absolute;
+    background-color: black;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 2px;
+}
+
+#btn-close::before{
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+#btn-close::after{
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
 
 
 /* UTILITIES */
